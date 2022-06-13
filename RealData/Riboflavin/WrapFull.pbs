@@ -1,0 +1,10 @@
+#!/bin/bash -l
+#PBS -l walltime=00:59:30,nodes=2:ppn=20
+
+module purge
+module load R/3.6.0-intel-2018a
+module load GSL/2.5-intel-2018a
+module load worker/1.6.8-intel-2018a
+
+cd $PBS_O_WORKDIR
+Rscript WrapFull_wrapper.R $s
